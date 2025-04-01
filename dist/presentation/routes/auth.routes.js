@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.authRoutes = void 0;
+const express_1 = require("express");
+const auth_controller_1 = require("../controllers/auth.controller");
+const prisma_user_repository_1 = require("../../infrastructure/database/prisma-user.repository");
+const auth_service_1 = require("../../application/services/auth.service");
+const router = (0, express_1.Router)();
+exports.authRoutes = router;
+const userRepository = new prisma_user_repository_1.PrismaUserRepository();
+const authService = new auth_service_1.AuthService(userRepository);
+const authController = new auth_controller_1.AuthController(authService);
+router.post("/register", authController.register.bind(authController));
+router.post("/login", authController.login.bind(authController));
