@@ -12,3 +12,4 @@ const authService = new auth_service_1.AuthService(userRepository);
 const authController = new auth_controller_1.AuthController(authService);
 router.post("/register", authController.register.bind(authController));
 router.post("/login", authController.login.bind(authController));
+router.post("/logout", authController.logout.bind(authController));

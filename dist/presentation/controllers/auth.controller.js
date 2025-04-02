@@ -39,5 +39,16 @@ class AuthController {
             }
         });
     }
+    logout(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                res.clearCookie("jwt");
+                res.json({ message: "Logout successful" });
+            }
+            catch (error) {
+                res.status(500).json({ message: error.message });
+            }
+        });
+    }
 }
 exports.AuthController = AuthController;
