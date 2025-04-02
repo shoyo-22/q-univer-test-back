@@ -31,7 +31,7 @@ class AuthController {
             try {
                 const { username, password } = req.body;
                 const token = yield this.authService.login(username, password);
-                res.cookie("jwt", token, { httpOnly: true, secure: true, sameSite: 'lax' });
+                res.cookie("jwt", token, { httpOnly: true, secure: true, sameSite: 'none' });
                 res.json({ message: "Login successful" });
             }
             catch (error) {
