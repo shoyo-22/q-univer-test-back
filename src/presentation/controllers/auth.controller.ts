@@ -18,7 +18,7 @@ export class AuthController {
     try {
       const { username, password } = req.body;
       const token = await this.authService.login(username, password);
-      res.cookie("jwt", token, { httpOnly: true });
+      res.cookie("jwt", token, { httpOnly: true, secure: true, sameSite: 'lax' });
       res.json({ message: "Login successful" });
     } catch (error: any) {
       res.status(401).json({ message: error.message });
