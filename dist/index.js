@@ -13,8 +13,8 @@ const cors_1 = __importDefault(require("cors"));
 const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
 const app = (0, express_1.default)();
 const allowedOrigins = [
-    "http://localhost:5173/",
-    "https://q-univer-test-front.vercel.app/",
+    "http://localhost:5173",
+    "https://q-univer-test-front.vercel.app",
 ];
 const limiter = (0, express_rate_limit_1.default)({
     windowMs: 15 * 60 * 1000,
