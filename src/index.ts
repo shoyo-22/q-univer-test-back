@@ -12,6 +12,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://q-univer-test-front.vercel.app",
+  "https://extraordinary-mermaid-1e6a0b.netlify.app/"
 ];
 
 const limiter = rateLimit({

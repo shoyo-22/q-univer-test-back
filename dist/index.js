@@ -15,6 +15,7 @@ const app = (0, express_1.default)();
 const allowedOrigins = [
     "http://localhost:5173",
     "https://q-univer-test-front.vercel.app",
+    "https://extraordinary-mermaid-1e6a0b.netlify.app/"
 ];
 const limiter = (0, express_rate_limit_1.default)({
     windowMs: 15 * 60 * 1000,
